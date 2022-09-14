@@ -7,6 +7,7 @@ const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
 // variables
+let newArray = [];
 let userText = "";
 let errorCount = 0;
 let startTime ;
@@ -47,6 +48,11 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    newArray.push(newLetter);
+    errorCount = newArray.length;
+    
+    
+    
   }
 
   // check if given question text is equal to user typed text
@@ -68,7 +74,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = parseInt((finishTime - startTime) / 1000);
+  const timeTaken =(finishTime - startTime) / 1000;
 
   // show result modal
   resultModal.innerHTML = "";
@@ -90,7 +96,7 @@ const gameOver = () => {
 
   // restart everything
   startTime = null;
-  errorCount = 0;
+  // errorCount = 0;
   userText = "";
   display.classList.add("inactive");
 };
@@ -134,7 +140,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+  const timeSpent = parseInt((currentTime - startTime) / 1000);
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
