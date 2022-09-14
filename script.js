@@ -9,7 +9,7 @@ const modalBackground = document.getElementById("modal-background");
 // variables
 let userText = "";
 let errorCount = 0;
-let startTime;
+let startTime ;
 let questionText = "";
 
 // Load and display question
@@ -109,14 +109,14 @@ const start = () => {
 
   const startCountdown = setInterval(() => {
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
-    console.log(count);
+    
 
     // finished timer
     if (count == 0) {
       // -------------- START TYPING -----------------
-      countdownOverlay.addEventListener("keydown", typeController);
+      document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
-      display.classList.remove("inactive");
+      display.classList.remove('inactive');
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
@@ -126,7 +126,7 @@ const start = () => {
 };
 
 // START Countdown
-startBtn.addEventListener("click", start());
+startBtn.addEventListener("click", start);
 
 // If history exists, show it
 displayHistory();
