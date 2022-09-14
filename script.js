@@ -92,8 +92,8 @@ const gameOver = () => {
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
-  startTime = null;
-   errorCount = 0;
+   startTime =null ;
+  errorCount = 0;
   userText = "";
   display.classList.add("inactive");
 };
@@ -125,7 +125,9 @@ const start = () => {
       startTime = new Date().getTime();
     }
     count--;
+    
   }, 1000);
+  countdownOverlay.innerHTML = ``;
 };
 
 // START Countdown
