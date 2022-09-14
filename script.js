@@ -7,7 +7,7 @@ const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
 // variables
-let newArray = [];
+
 let userText = "";
 let errorCount = 0;
 let startTime ;
@@ -48,8 +48,8 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
-    newArray.push(newLetter);
-    errorCount = newArray.length;
+    errorCount++
+   
     
     
     
@@ -96,7 +96,7 @@ const gameOver = () => {
 
   // restart everything
   startTime = null;
-  // errorCount = 0;
+   errorCount = 0;
   userText = "";
   display.classList.add("inactive");
 };
