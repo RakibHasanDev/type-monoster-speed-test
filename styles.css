@@ -16,6 +16,40 @@ body {
   margin: 0 auto;
 }
 
+.nav-bar{
+  width: 12rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content:space-around;
+  margin: auto;
+  padding: 2rem 0 0 0;
+ 
+}
+.nav-bar a:hover {
+  background-color:#20B2AA;
+}
+nav-bar a:active {
+  /* border: 2px solid green; */
+  background-color: #eb6565;
+}
+.nav-link{
+  /* padding: 0 20px 0 20px; */
+  display: inline-block;
+    font-weight: 600;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      /* background-image: linear-gradient(#ff6600, #ff99cc); */
+       padding: 5px 15px; 
+      border-radius: 5px;
+      background: rgb(255, 255, 255);
+        background: linear-gradient(92.49deg,
+            rgba(255, 255, 255, 0.1) 0.18%,
+            rgba(255, 255, 255, 0.05) 99.85%);
+            backdrop-filter: blur(5px);
+}
+
 #question {
   height: 100px;
   display: flex;
